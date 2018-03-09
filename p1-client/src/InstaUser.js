@@ -11,6 +11,7 @@ class InstaUser extends Component {
 
     this.user1input = this.user1input.bind(this);
     this.user2input = this.user2input.bind(this);
+    this.fight = this.fight.bind(this);
   }
 
   render() {
@@ -35,11 +36,11 @@ class InstaUser extends Component {
   }
 
   user2input (e) {
-    this.setState({ user22: e.target.value });
+    this.setState({ user2: e.target.value });
   }
 
   fight () {
-      this.props.SetUserProfiles(this.state.user1, this.state.user22);
+      this.props.SetUserProfiles(this.state.user1, this.state.user2);
   }
 
 }
