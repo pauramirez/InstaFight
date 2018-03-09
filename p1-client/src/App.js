@@ -13,9 +13,12 @@ class App extends Component {
       winner: null,
     };
     this.SetProfiles = this.SetProfiles.bind(this);
+    this.UserProfile = this.UserProfile.bind(this);
+    this.SetWinner = this.SetWinner.bind(this);
   }
 
   UserProfile(user, response) {
+    const profile = { profile: user, Templikes: 0 };
     fetch("https://www.instagram.com/" + user + "/?__a=1")
       .then((res) => {
         return res.json();
@@ -25,7 +28,6 @@ class App extends Component {
           window.alert("Ha habido un problema con la pelea, verifique que los contrincantes no tengan un @ y esten debidamente escritos es decir no sean privados");
         }
         else {
-          const profile = { profiles: user, Templikes: 0 };
           var post = data.user.media.nodes;
           for (let i = 0; i < post.length; i++) {
             var likes = data.user.media.nodes[i].likes.count;
@@ -50,8 +52,8 @@ class App extends Component {
         }
       });
     });
-
   }
+
   render() {
     return (
       <div className="App">

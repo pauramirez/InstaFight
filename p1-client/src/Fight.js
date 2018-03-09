@@ -17,7 +17,7 @@ class Fight extends Component {
     let winner;
 
 
-    fighters = this.props.fighters[0] + "VS" + this.props.fighters[1];
+    fighters = this.props.fighters[0] + "  VS  " + this.props.fighters[1];
 
     if (this.state.winner !== null) {
       const url = "https://www.instagram.com/" + this.state.winner.profile;
